@@ -1,0 +1,48 @@
+{
+  "name": "mern-store",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.12.2",
+    "@material-ui/icons": "^4.11.2",
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.1",
+    "cors": "^2.8.5",
+    "framer-motion": "^4.1.17",
+    "fs": "^0.0.1-security",
+    "googleapis": "^83.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "material-ui-rating": "^4.0.0-beta.2",
+    "mongoose": "^5.13.4",
+    "multer": "^1.4.3",
+    "next": "11.0.1",
+    "next-auth": "^3.27.3",
+    "next-connect": "^0.11.0",
+    "nodemailer": "^6.6.3",
+    "pkg.json": "^2.0.8",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-multi-carousel": "^2.6.3",
+    "react-redux": "^7.2.4",
+    "react-responsive-carousel": "^3.2.20",
+    "react-slideshow-image": "^3.5.0",
+    "react-spinners": "^0.11.0",
+    "redux": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.36.0",
+    "stripe": "^8.174.0",
+    "time-stamp": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1"
+  }
+}

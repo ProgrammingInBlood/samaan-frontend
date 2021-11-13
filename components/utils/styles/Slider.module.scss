@@ -1,0 +1,21 @@
+.imageBox {
+  width: 100%;
+  padding: 20px;
+
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  border: 10px solid transparent;
+}
+
+.image {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 20px !important;
+  //   display: none !important;
+  object-fit: contain !important;
+  min-height: auto !important;
+  margin: 0 !important;
+}
+
+//#5e39eb

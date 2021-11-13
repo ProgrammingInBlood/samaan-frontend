@@ -1,0 +1,56 @@
+.container {
+  max-width: 250px;
+  min-width: 250px;
+  // max-height: 300px;
+  min-height: 300px;
+
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  h1 {
+    font-size: 20px;
+    margin: 5px 0;
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+  p {
+    margin: 5px 0;
+    font-size: 15px;
+    @media (max-width: 768px) {
+      font-size: 11px;
+    }
+  }
+
+  img {
+    border-radius: 20px;
+    transition: all 0.5s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: 100;
+    margin: 8px;
+    min-height: 100px;
+  }
+}
+
+.imageBox {
+  min-width: 200px;
+  @media (max-width: 600px) {
+    min-width: 120px;
+  }
+}

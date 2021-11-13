@@ -1,0 +1,63 @@
+.suggestions {
+  padding: 10px;
+  position: absolute;
+  background-color: #ffffff;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  max-height: 300px;
+  overflow-y: auto;
+
+  li {
+    padding: 10px;
+    transition: all 0.5s ease;
+    &:hover {
+      background-color: gainsboro;
+    }
+  }
+}
+
+.search {
+  width: 300px;
+  position: relative;
+  transition: all 0.5s ease;
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    font-family: "Chivo";
+    border-radius: 10px;
+    outline: none;
+    border: 0;
+    background: rgb(234, 234, 234);
+    transition: all 0.5s ease;
+
+    &:focus {
+      border: 1px solid rgb(148, 141, 141);
+      border-radius: 10px;
+      background: white;
+      &.suggestions {
+        display: block !important;
+      }
+    }
+    &::placeholder {
+      font-size: 11px;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    cursor: pointer;
+  }
+}
+
+.form {
+  border: 0px solid lightgrey !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+  border-radius: 0px !important;
+}

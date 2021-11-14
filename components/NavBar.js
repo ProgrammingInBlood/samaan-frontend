@@ -1,4 +1,3 @@
-
 import styles from "./styles/NavBar.module.scss";
 import router, { useRouter } from "next/router";
 
@@ -20,14 +19,10 @@ function Navbar() {
   const [session, loading] = useSession();
   const [userSession, setUserSession] = useState([]);
   const [click, setClick] = useState(false);
-  const [cartCount,setCartCount] = useState(0)
+  const [cartCount, setCartCount] = useState(0);
 
   //REDUX CART COUNT
   const cart = useSelector((state) => state.cart);
-
-  
-
- 
 
   //CHECKING AUTHRIZATION
   useEffect(() => {
@@ -45,7 +40,7 @@ function Navbar() {
       return cartItems.reduce((qty, item) => qty + item.qty, 0);
     };
     setCartCount(getCartCount());
-  }, [cart.cartItems])
+  }, [cart.cartItems]);
 
   //HANDLE MENU CLICK ON MOBILE VIEW
   function handleSearch() {
@@ -200,7 +195,7 @@ function Navbar() {
           </span>
           <div className={styles.submenu} style={{ fontSize: 13 }}>
             <span
-              onClick={() => Router.push("/settings")}
+              onClick={() => Router.push("/settings/account")}
               style={{
                 display: "flex",
                 alignItems: "center",

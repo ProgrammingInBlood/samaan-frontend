@@ -11,6 +11,7 @@ function ProductBox({ name, src, price, id }) {
     >
       <div className={styles.imageBox}>
         <Image
+          alt={name}
           priority={true}
           src={src}
           height={200}

@@ -12,12 +12,14 @@ function HomePage({ getProducts }) {
       <div className={styles.banners}>
         <div className={styles.banner}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/6th-Aug-Desktop-banner-Half-DOTD-Men-1628241980.jpg"
           />
         </div>
         <div className={styles.banner}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/desktop-strips-1625745009.png"
           />

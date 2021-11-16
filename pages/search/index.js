@@ -12,12 +12,12 @@ function Search({ session }) {
   const [data, setData] = useState([]);
   const Router = useRouter();
   const { search = "" } = Router.query;
-
+  const dataeffect = data[0]?._id;
   useEffect(() => {
     axios.get(`/api/search?search=${search}`).then((response) => {
       setData(response.data);
     });
-  }, [data[0]?._id, Router]);
+  }, [dataeffect, Router, search]);
 
   return (
     <div>

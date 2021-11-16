@@ -1,4 +1,3 @@
-
 import { signIn } from "next-auth/client";
 import jwt, { verify } from "jsonwebtoken";
 import { useRouter } from "next/router";
@@ -40,7 +39,12 @@ function Verify({ query }) {
   return (
     <div className={styles.container}>
       <div className={styles.imageBox}>
-        <Image src="/MERN-logo.png" width="150" height="60" />
+        <Image
+          src="/MERN-logo.png"
+          width="150"
+          height="60"
+          alt="login success"
+        />
       </div>
       <h3 style={styles.mainTitle}>Login Success!</h3>
       <h1 className={styles.title}>Please wait while we redirect you...</h1>

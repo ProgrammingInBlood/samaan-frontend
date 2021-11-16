@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "./styles/SearchBar.module.scss";
-import FastForwardIcon from "@material-ui/icons/ArrowForwardIosOutlined";
+import FastForwardIcon from "@mui/icons-material/ArrowForwardIosOutlined";
 import axios from "axios";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@mui/icons-material/Search";
 import router from "next/router";
 
 function SearchBar() {

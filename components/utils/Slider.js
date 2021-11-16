@@ -45,36 +45,42 @@ function Slider() {
       >
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/bazaar-hero-banner-men-1626189046.jpg"
           />
         </div>
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/vest-hero-banner-men-1626965578.jpg"
           />
         </div>
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/loki-marvel-hero-banner-1626697278.jpg"
           />
         </div>
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/Hero-Banner-Tshirt-Men-1-1626853726.jpg"
           />
         </div>
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/azadi-hero-banner-live-men-1628260941.jpg"
           />
         </div>
         <div className={styles.imageBox}>
           <img
+            alt="image"
             className={styles.image}
             src="https://images.bewakoof.com/uploads/grid/app/b2g1-hero-banner-men-1626697277.jpg"
           />

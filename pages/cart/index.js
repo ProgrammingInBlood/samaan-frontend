@@ -20,7 +20,7 @@ function Cart() {
   useEffect(() => {
     const { cartItems } = cart;
     setCartItems(cartItems);
-  }, [cart.cartItems]);
+  }, [cart]);
 
   const qtyHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -36,27 +36,21 @@ function Cart() {
   let cartArray = [];
 
   cartItems.map((item) => {
-
     let data = {
       quantity: item.qty,
       name: item.name,
       images: [item.images],
       amount: Math.round(item.price * 100),
       currency: "inr",
-
     };
 
     cartArray.push(data);
   });
 
- 
-
   const redirectToCheckout = async () => {
     const { data } = await axios.post("/api/checkout", {
       items: cartArray,
     });
-
-
 
     if (data) {
       await router.push(data.url);

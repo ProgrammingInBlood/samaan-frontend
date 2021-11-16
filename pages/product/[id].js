@@ -7,8 +7,8 @@ import { getProductsDetails } from "../../redux/actions/productAction";
 import { addToCart } from "../../redux/actions/cartActions";
 import { useEffect, useState } from "react";
 import { getSession } from "next-auth/client";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-import AddShoppingCartIcon from "@material-ui/icons/AddShoppingCart";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 
 import Loading from "../../components/Loading";
 import { useRouter } from "next/router";
@@ -90,6 +90,7 @@ function Details() {
                   <ul>
                     <li className={styles.img}>
                       <Image
+                        alt="product-image"
                         priority={true}
                         src={
                           products?.images ? products.images : "/product-1.jpeg"
@@ -101,6 +102,7 @@ function Details() {
                     </li>
                     <li className={styles.img}>
                       <Image
+                        alt="product-image"
                         priority={true}
                         src={
                           products?.images ? products.images : "/product-1.jpeg"
@@ -112,6 +114,7 @@ function Details() {
                     </li>
                     <li className={styles.img}>
                       <Image
+                        alt="product-image"
                         priority={true}
                         src={
                           products?.images ? products.images : "/product-1.jpeg"
@@ -123,6 +126,7 @@ function Details() {
                     </li>
                     <li className={styles.img}>
                       <Image
+                        alt="product-image"
                         priority={true}
                         src={
                           products?.images ? products.images : "/product-1.jpeg"
@@ -134,6 +138,7 @@ function Details() {
                     </li>
                     <li className={styles.img}>
                       <Image
+                        alt="product-image"
                         priority={true}
                         src={
                           products?.images ? products.images : "/product-1.jpeg"
@@ -147,6 +152,7 @@ function Details() {
                 </div>
                 <div className={styles.mainImage}>
                   <Image
+                    alt="product-image"
                     priority={true}
                     src={products?.images ? products.images : "/product-1.jpeg"}
                     width="500"

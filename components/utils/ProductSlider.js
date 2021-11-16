@@ -11,10 +11,9 @@ function Slider({ getProducts }) {
   const { products, loading, error } = getProducts;
   const [things, setThings] = useState([]);
 
- 
   useEffect(() => {
     setThings(products);
-  }, [things]);
+  }, [products, things]);
 
   useEffect(() => {
     setWindowDimensions(window.innerWidth);

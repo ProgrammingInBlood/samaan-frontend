@@ -12,9 +12,7 @@ import { getProducts as listProducts } from "../redux/actions/productAction";
 
 import { getSession } from "next-auth/client";
 
-
 export default function Home({ session }) {
-
   const dispatch = useDispatch();
   const getProducts = useSelector((state) => state.getProducts);
 
@@ -36,7 +34,7 @@ export default function Home({ session }) {
 
   useEffect(() => {
     dispatch(listProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <motion.div

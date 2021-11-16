@@ -72,6 +72,7 @@ function SignUp() {
         <div className={styles.buttons}>
           <button className={styles.button}>
             <Image
+              alt="image"
               src="/icons/google.png"
               height="24"
               width="24"
@@ -80,7 +81,13 @@ function SignUp() {
             <span> Google</span>
           </button>
           <button className={styles.button}>
-            <Image src="/icons/fb.png" height="24" width="24" layout="fixed" />{" "}
+            <Image
+              alt="image"
+              src="/icons/fb.png"
+              height="24"
+              width="24"
+              layout="fixed"
+            />{" "}
             <span> Facebook</span>
           </button>
         </div>

@@ -28,7 +28,7 @@ function Login({ session }) {
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [router, session]);
   if (loading) {
     return <Loading />;
   }
@@ -80,6 +80,7 @@ function Login({ session }) {
         <div className={styles.buttons}>
           <button className={styles.button}>
             <Image
+              alt="google"
               src="/icons/google.png"
               height="24"
               width="24"
@@ -88,7 +89,13 @@ function Login({ session }) {
             <span> Google</span>
           </button>
           <button className={styles.button}>
-            <Image src="/icons/fb.png" height="24" width="24" layout="fixed" />{" "}
+            <Image
+              alt="facebook"
+              src="/icons/fb.png"
+              height="24"
+              width="24"
+              layout="fixed"
+            />{" "}
             <span> Facebook</span>
           </button>
         </div>
@@ -144,4 +151,3 @@ export async function getServerSideProps(context) {
     props: { session },
   };
 }
-

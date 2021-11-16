@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/client";
 import Navbar from "../../components/NavBar";
 import styles from "./settings.module.scss";
-import { Avatar } from "@material-ui/core";
+import { Avatar } from "@mui/material";
 import { signOut } from "next-auth/client";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -66,6 +66,7 @@ function Settings({ session }) {
           <ul>
             <li onClick={() => router.push("/settings/address")}>
               <Image
+                alt="image"
                 src="/settings/location.png"
                 height="45"
                 width="45"
@@ -78,6 +79,7 @@ function Settings({ session }) {
             </li>
             <li>
               <Image
+                alt="image"
                 src="/settings/order.png"
                 height="45"
                 width="45"
@@ -90,6 +92,7 @@ function Settings({ session }) {
             </li>
             <li>
               <Image
+                alt="image"
                 src="/settings/favourite.png"
                 height="45"
                 width="45"
@@ -102,6 +105,7 @@ function Settings({ session }) {
             </li>
             <li>
               <Image
+                alt="image"
                 src="/settings/review.png"
                 height="45"
                 width="45"
@@ -114,6 +118,7 @@ function Settings({ session }) {
             </li>
             <li>
               <Image
+                alt="image"
                 src="/settings/credit-card.png"
                 height="45"
                 width="45"
@@ -126,6 +131,7 @@ function Settings({ session }) {
             </li>
             <li onClick={() => router.push("/settings/account")}>
               <Image
+                alt="image"
                 src="/settings/account.png"
                 height="45"
                 width="45"

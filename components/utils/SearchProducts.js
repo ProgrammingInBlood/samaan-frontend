@@ -1,7 +1,7 @@
 import styles from "./styles/SearchProducts.module.scss";
 import Image from "next/image";
 import router from "next/router";
-import Rating from "material-ui-rating";
+import { Rating } from "@mui/material";
 
 function SearchProducts({ name, src, price, id }) {
   return (
@@ -11,6 +11,7 @@ function SearchProducts({ name, src, price, id }) {
     >
       <div className={styles.imageBox}>
         <Image
+          alt={name}
           priority={true}
           src={src}
           height={200}

@@ -1,17 +1,17 @@
 import styles from "./styles/NavBar.module.scss";
 import router, { useRouter } from "next/router";
 
-import PersonIcon from "@material-ui/icons/Person";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import PersonIcon from "@mui/icons-material/Person";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { signOut, useSession } from "next-auth/client";
 import { useSelector } from "react-redux";
-import SearchIcon from "@material-ui/icons/Search";
+import SearchIcon from "@mui/icons-material/Search";
 
 import SearchBar from "./utils/SearchBar";
-import { Avatar } from "@material-ui/core";
-import CloseIcon from "@material-ui/icons/Close";
+import { Avatar } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 function Navbar() {
   //VARIABLES
 
@@ -31,7 +31,7 @@ function Navbar() {
       setUserSession(user);
     }
     check();
-  }, []);
+  }, [session]);
   //FIXING suppressHydrationWarning
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function Navbar() {
       return cartItems.reduce((qty, item) => qty + item.qty, 0);
     };
     setCartCount(getCartCount());
-  }, [cart.cartItems]);
+  }, [cart]);
 
   //HANDLE MENU CLICK ON MOBILE VIEW
   function handleSearch() {
@@ -62,6 +62,7 @@ function Navbar() {
       >
         <span className={styles.mainlogo}>
           <Image
+            alt="image"
             src="/sam.svg"
             width="100"
             height="50"
@@ -92,6 +93,7 @@ function Navbar() {
           </li>
           <li>
             <Image
+              alt="image"
               src="/icons/heart.png"
               width="28px"
               height="28px"
@@ -108,6 +110,7 @@ function Navbar() {
                 <p>{cartCount}</p>
               </div>
               <Image
+                alt="image"
                 src="/icons/cart.png"
                 width="24px"
                 height="24px"
@@ -186,6 +189,7 @@ function Navbar() {
             />
             <span style={{ paddingLeft: "5px", paddingTop: 6 }}>
               <Image
+                alt="image"
                 src="/icons/down-arrow.png"
                 width="18px"
                 height="18px"
@@ -204,6 +208,7 @@ function Navbar() {
             >
               <p>Settings&nbsp;</p>
               <Image
+                alt="image"
                 src="/icons/settings.png"
                 width="18px"
                 height="18px"
@@ -219,6 +224,7 @@ function Navbar() {
             >
               <p>My Orders&nbsp;</p>
               <Image
+                alt="image"
                 src="/icons/shopping-bag.png"
                 width="18px"
                 height="20px"
@@ -244,6 +250,7 @@ function Navbar() {
           <span style={{ display: "flex", alignItems: "center" }}>
             <span style={{ padding: "0 10px" }}>
               <Image
+                alt="image"
                 src="/icons/heart.png"
                 width="28px"
                 height="28px"
@@ -259,6 +266,7 @@ function Navbar() {
                 <p>{cartCount}</p>
               </div>
               <Image
+                alt="image"
                 src="/icons/cart.png"
                 width="24px"
                 height="24px"

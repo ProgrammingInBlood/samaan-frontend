@@ -1,6 +1,6 @@
 import styles from "./styles/Sidebar.module.scss";
 import { useSession } from "next-auth/client";
-import { Avatar } from "@material-ui/core";
+import { Avatar } from "@mui/material";
 import { signOut } from "next-auth/client";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -33,6 +33,7 @@ function Sidebar({ index }) {
             onClick={() => router.push("/settings/account")}
           >
             <Image
+              alt="settings-options"
               src="/settings/account.png"
               height="45"
               width="45"
@@ -45,6 +46,7 @@ function Sidebar({ index }) {
           </li>
           <li>
             <Image
+              alt="settings-options"
               src="/settings/order.png"
               height="45"
               width="45"
@@ -57,6 +59,7 @@ function Sidebar({ index }) {
           </li>
           <li>
             <Image
+              alt="settings-options"
               src="/settings/favourite.png"
               height="45"
               width="45"
@@ -69,6 +72,7 @@ function Sidebar({ index }) {
           </li>
           <li>
             <Image
+              alt="settings-options"
               src="/settings/review.png"
               height="45"
               width="45"
@@ -81,6 +85,7 @@ function Sidebar({ index }) {
           </li>
           <li>
             <Image
+              alt="settings-options"
               src="/settings/credit-card.png"
               height="45"
               width="45"
@@ -96,6 +101,7 @@ function Sidebar({ index }) {
             onClick={() => router.push("/settings/address")}
           >
             <Image
+              alt="settings-options"
               src="/settings/location.png"
               height="45"
               width="45"

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Navbar from "../../components/NavBar";
 import styles from "./account.module.scss";
 import Head from "next/head";
-import { Avatar, Badge } from "@material-ui/core";
+import { Avatar, Badge } from "@mui/material";
 import { useRouter } from "next/router";
 import Sidebar from "../../components/Sidebar";
 import ChangePassword from "../../components/modals/ChangePassword";
@@ -23,7 +23,7 @@ function Account({ updateSession, userData }) {
     setEmail(userData.email);
     setName(userData.firstName);
     setLastName(userData.setLastName);
-  }, [userData]);
+  }, [userData.firstName, userData.lastName, userData.email]);
 
   const handleEdit = () => {
     setToggle(!toggle);

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./styles/CartItems.module.scss";
-import AddIcon from "@material-ui/icons/Add";
-import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 function CartItems({ item, removeFromCartHandler, qtyHandler }) {
   const [qty, setQty] = useState(item.qty);
@@ -10,7 +10,7 @@ function CartItems({ item, removeFromCartHandler, qtyHandler }) {
   useEffect(() => {
     console.log(qty);
     qtyHandler(item.product, qty);
-  }, [qty]);
+  }, [item.product, qty]);
   function decreaseQty() {
     setQty(parseInt(qty) > 1 ? parseInt(qty) - 1 : parseInt(qty));
   }
@@ -56,7 +56,13 @@ function CartItems({ item, removeFromCartHandler, qtyHandler }) {
             </span>
           </div>
         </div>
-        <Image src={item.images} width="100" height="100" objectFit="contain" />
+        <Image
+          alt="cart"
+          src={item.images}
+          width="100"
+          height="100"
+          objectFit="contain"
+        />
       </div>
       <div className={styles.buttons}>
         <button onClick={() => removeFromCartHandler(item.product)}>

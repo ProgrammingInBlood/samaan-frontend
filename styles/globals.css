@@ -376,20 +376,20 @@ img {
 }
 
 .count-content {
-  background-color: black;
-  color: white;
-  border-radius: 0.3rem;
+  background-color: white;
+
+  border-radius: 13px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 0.5rem;
   width: 6rem;
-  height: 44px;
+  height: 64px;
+  border: 1px solid rgb(192, 192, 192);
 }
 
 .count-content span {
   font-size: 1.2rem;
-  color: var(--white);
   /* padding: 0.8rem; */
   cursor: pointer;
   -webkit-touch-callout: none;
@@ -401,9 +401,8 @@ img {
 }
 .count-content select {
   padding: 10px;
-  background-color: black;
   border: 0;
-  color: white;
+  background-color: white;
   font-size: 15px;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -415,7 +414,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 85%;
 }
 
 .price-title {
@@ -439,6 +437,9 @@ img {
 }
 
 @media only screen and (max-width: 600px) {
+  .count-content {
+    height: 60px;
+  }
   .row {
     margin-top: 4rem;
   }
@@ -466,17 +467,6 @@ img {
     line-height: 1.2;
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-
-  .price {
-    position: absolute;
-    left: 0;
-    margin-top: 4rem;
-    border-radius: 2rem 2rem 0 0;
-
-    width: 100%;
-    padding: 2rem 2rem 0 2rem;
-    justify-content: center;
   }
 }
 

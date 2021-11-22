@@ -12,7 +12,6 @@
     flex-direction: column;
     align-items: center;
   }
-  position: relative;
 }
 
 .ButtonDiv {
@@ -27,10 +26,10 @@
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   text-transform: capitalize;
-  background: black;
-  padding: 10px 20px;
+  background: #5546d1;
+  padding: 20px 20px;
   color: white;
-  border-radius: 8px;
+  border-radius: 13px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -44,12 +43,17 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  height: 64px;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    height: 64px;
+  }
 }
 .images {
   position: sticky;
   top: 0;
   padding-left: 120px;
-  width: 50%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +67,7 @@
   }
 }
 .details {
-  width: 50%;
+  width: 100%;
   min-height: calc(100vh - 64px);
   padding: 20px;
   padding-top: 80px;
@@ -72,14 +76,33 @@
     width: 100%;
     max-width: 800px;
     padding-top: 20px;
+    min-height: auto;
+    padding-bottom: 100px;
   }
+}
+
+.detailsContainer {
+  position: relative;
+  width: 100%;
 }
 
 .price {
   display: flex;
-  width: 200px;
   align-items: center;
-  justify-content: space-between;
+  font-family: "open sans", sans-serif;
+
+  h3 {
+    background-color: #f5f6ff;
+    padding: 20px;
+    border-radius: 13px;
+    color: #5546d1;
+    margin-right: 20px;
+  }
+  h2 {
+    margin-left: 20px;
+    font-family: "Poppins", sans-serif;
+    color: #73c9a4;
+  }
 }
 
 .image {
@@ -91,13 +114,13 @@
   border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-
   background-color: var(--white-color);
   ul {
     list-style: none;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px 0;
 
     @media (max-width: 1024px) {
       flex-direction: row;
@@ -106,6 +129,9 @@
   li {
     padding: 10px;
     cursor: pointer;
+    img {
+      border-radius: 8px;
+    }
     &:hover {
       transform: scale(1.1);
     }
@@ -119,6 +145,10 @@
 
 .mainImage {
   padding: 20px;
+
+  img {
+    border-radius: 20px !important;
+  }
 }
 
 .highlights {
@@ -169,12 +199,23 @@
 }
 
 .count {
-  width: 100%;
+  width: 48%;
+  padding: 10px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: #f5f6ff;
 
-  @media (max-width: 600px) {
-    flex-direction: column;
+  border-radius: 20px 20px 0 0;
+  @media (max-width: 1024px) {
+    width: 100%;
+    padding: 10px;
+    padding-right: 0;
   }
+}
+
+.counter {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

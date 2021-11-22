@@ -18,6 +18,7 @@ function Details() {
   const router = useRouter();
   const [qty, setQty] = useState(1);
   const easing = [0.6, -0.05, 0.01, 0.99];
+  const [image, setImage] = useState("");
 
   const fadeInUp = {
     initial: {
@@ -36,14 +37,15 @@ function Details() {
   const productsDetails = useSelector((state) => state.getProductsDetails);
   const { products, loading, error } = productsDetails;
 
-  console.log(products);
-
   useEffect(() => {
     if (products && router.query.id !== products._id) {
       dispatch(getProductsDetails(router.query.id));
     }
+    if (products && products?.images?.length > 0) {
+      setImage(products?.images[0]);
+    }
   }, [dispatch, products, router, router.query.id]);
-
+  console.log(image);
   function decreaseQty() {
     setQty(parseInt(qty) > 1 ? parseInt(qty) - 1 : parseInt(qty));
   }
@@ -58,6 +60,10 @@ function Details() {
   const addToCartHandler = () => {
     dispatch(addToCart(products._id, parseInt(qty)));
     router.push("/cart", null, { shallow: true });
+  };
+
+  const calculateDiscount = (price, salePrice) => {
+    return parseInt(((price - salePrice) / price) * 100);
   };
 
   return (
@@ -88,114 +94,54 @@ function Details() {
               <div className={styles.images}>
                 <div className={styles.image}>
                   <ul>
-                    <li className={styles.img}>
-                      <Image
-                        alt="product-image"
-                        priority={true}
-                        src={
-                          products?.images ? products.images : "/product-1.jpeg"
-                        }
-                        width="50"
-                        height="50"
-                        objectFit="contain"
-                      />
-                    </li>
-                    <li className={styles.img}>
-                      <Image
-                        alt="product-image"
-                        priority={true}
-                        src={
-                          products?.images ? products.images : "/product-1.jpeg"
-                        }
-                        width="50"
-                        height="50"
-                        objectFit="contain"
-                      />
-                    </li>
-                    <li className={styles.img}>
-                      <Image
-                        alt="product-image"
-                        priority={true}
-                        src={
-                          products?.images ? products.images : "/product-1.jpeg"
-                        }
-                        width="50"
-                        height="50"
-                        objectFit="contain"
-                      />
-                    </li>
-                    <li className={styles.img}>
-                      <Image
-                        alt="product-image"
-                        priority={true}
-                        src={
-                          products?.images ? products.images : "/product-1.jpeg"
-                        }
-                        width="50"
-                        height="50"
-                        objectFit="contain"
-                      />
-                    </li>
-                    <li className={styles.img}>
-                      <Image
-                        alt="product-image"
-                        priority={true}
-                        src={
-                          products?.images ? products.images : "/product-1.jpeg"
-                        }
-                        width="50"
-                        height="50"
-                        objectFit="contain"
-                      />
-                    </li>
+                    {products?.images?.map((image) => (
+                      <li className={styles.img}>
+                        <Image
+                          alt="product-image"
+                          priority={true}
+                          src={products?.images ? image : "/product-1.jpeg"}
+                          width="50"
+                          height="50"
+                          objectFit="cover"
+                          onClick={() => setImage(image)}
+                        />
+                      </li>
+                    ))}
                   </ul>
                 </div>
                 <div className={styles.mainImage}>
                   <Image
                     alt="product-image"
                     priority={true}
-                    src={products?.images ? products.images : "/product-1.jpeg"}
+                    src={image ? image : "/product-1.jpeg"}
                     width="500"
                     height="500"
                     objectFit="cover"
                   />
                 </div>
               </div>
-              <div className={styles.details}>
-                <h2 className="info-subtitle">{products.brand}</h2>
-                <h1 className="info-title">{products.name}</h1>
-                <div className={styles.price}>
-                  <h3>₹{products.price}</h3>
-                  <del>₹89,990</del>
-                </div>
-                <>
-                  <span>Status:</span>
-                  {products.countInStock > 0 ? (
-                    <p style={{ display: "inline-block" }}>In Stock</p>
-                  ) : (
-                    <p
-                      style={{
-                        color: "red",
-                        fontWeight: 700,
-                        display: "inline-block",
-                      }}
-                    >
-                      &nbsp;Out of Stock
-                    </p>
-                  )}
-                </>
+              <div className={styles.detailsContainer}>
+                <div className={styles.details}>
+                  <h2 className="info-subtitle">{products.brand}</h2>
+                  <h1 className="info-title">{products.name}</h1>
+                  <div className={styles.price}>
+                    <h3>₹{products.price}</h3>
+                    <del>₹89,990</del>
+                    <h2>
+                      {calculateDiscount(parseInt(products.price), 89990)}% off
+                    </h2>
+                  </div>
 
-                <div className={styles.description}>
-                  <h4>Description</h4>
+                  <div className={styles.description}>
+                    <h4>Description</h4>
 
-                  <div className={styles.descriptionText}>
-                    {products.description}
+                    <div className={styles.descriptionText}>
+                      {products.description}
+                    </div>
                   </div>
                 </div>
                 {products.countInStock > 0 ? (
                   <div className={styles.counter}>
-                    <h3 className="count-title">Count</h3>
-
                     <div className={styles.count}>
                       <div className="count-content">
                         <span
@@ -229,7 +175,7 @@ function Details() {
                           className={styles.button}
                           onClick={addToCartHandler}
                         >
-                          ADD TO CART &nbsp;{" "}
+                          Add to Cart &nbsp;{" "}
                           <AddShoppingCartIcon fontSize="small" />
                         </span>
                         <span href="" className={styles.button}>

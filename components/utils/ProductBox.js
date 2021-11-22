@@ -13,7 +13,7 @@ function ProductBox({ name, src, price, id }) {
         <Image
           alt={name}
           priority={true}
-          src={src}
+          src={src[0]}
           height={200}
           width={200}
           layout="responsive"

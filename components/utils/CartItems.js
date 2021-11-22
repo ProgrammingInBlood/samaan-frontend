@@ -58,7 +58,7 @@ function CartItems({ item, removeFromCartHandler, qtyHandler }) {
         </div>
         <Image
           alt="cart"
-          src={item.images}
+          src={item.images[0]}
           width="100"
           height="100"
           objectFit="contain"

@@ -95,7 +95,7 @@ function Details() {
                 <div className={styles.image}>
                   <ul>
                     {products?.images?.map((image) => (
-                      <li className={styles.img}>
+                      <li className={styles.img} key={image}>
                         <Image
                           alt="product-image"
                           priority={true}
